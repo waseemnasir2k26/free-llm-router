@@ -1,0 +1,6 @@
+node_modules/
+router.state.json
+*.state.json
+.env
+.env.*
+*.log

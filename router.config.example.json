@@ -1,0 +1,107 @@
+{
+  "_comment": "Limits below are CONSERVATIVE STARTING POINTS, not guarantees. Free tiers change often: re-check each 'source' URL and edit the numbers. 'last_verified' is the date the author last set these values from the provider docs; it was not re-checked against live dashboards at release time.",
+  "state_file": "router.state.json",
+  "default_alias": "fast",
+  "removed_ttl_seconds": 86400,
+  "cooldown_base_seconds": 15,
+  "cooldown_max_seconds": 3600,
+  "request_timeout_ms": 60000,
+  "providers": {
+    "groq": { "api_key_env": "GROQ_API_KEY" },
+    "gemini": { "api_key_env": "GEMINI_API_KEY" },
+    "openrouter": { "api_key_env": "OPENROUTER_API_KEY" },
+    "cerebras": { "api_key_env": "CEREBRAS_API_KEY" },
+    "mistral": { "api_key_env": "MISTRAL_API_KEY" }
+  },
+  "models": [
+    {
+      "id": "groq/llama-3.1-8b-instant",
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "free": true,
+      "context_window": 131072,
+      "limits": { "rpm": 30, "rpd": 14400, "tpm": 6000 },
+      "source": "https://console.groq.com/docs/rate-limits",
+      "last_verified": "2026-10-12"
+    },
+    {
+      "id": "groq/llama-3.3-70b-versatile",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "free": true,
+      "context_window": 131072,
+      "limits": { "rpm": 30, "rpd": 1000, "tpm": 12000 },
+      "source": "https://console.groq.com/docs/rate-limits",
+      "last_verified": "2026-10-12"
+    },
+    {
+      "id": "gemini/gemini-2.5-flash",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "free": true,
+      "context_window": 1048576,
+      "limits": { "rpm": 10, "rpd": 250, "tpm": 250000 },
+      "source": "https://ai.google.dev/gemini-api/docs/rate-limits",
+      "last_verified": "2026-10-12"
+    },
+    {
+      "id": "gemini/gemini-2.5-flash-lite",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-lite",
+      "free": true,
+      "context_window": 1048576,
+      "limits": { "rpm": 15, "rpd": 1000, "tpm": 250000 },
+      "source": "https://ai.google.dev/gemini-api/docs/rate-limits",
+      "last_verified": "2026-10-12"
+    },
+    {
+      "id": "openrouter/llama-3.3-70b:free",
+      "provider": "openrouter",
+      "model": "meta-llama/llama-3.3-70b-instruct:free",
+      "free": true,
+      "context_window": 65536,
+      "limits": { "rpm": 20, "rpd": 50 },
+      "source": "https://openrouter.ai/docs/api-reference/limits",
+      "last_verified": "2026-10-12"
+    },
+    {
+      "id": "cerebras/llama-3.3-70b",
+      "provider": "cerebras",
+      "model": "llama-3.3-70b",
+      "free": true,
+      "context_window": 65536,
+      "limits": { "rpm": 30, "rpd": 14400, "tpm": 60000 },
+      "source": "https://inference-docs.cerebras.ai/support/rate-limits",
+      "last_verified": "2026-10-12"
+    },
+    {
+      "id": "mistral/mistral-small-latest",
+      "provider": "mistral",
+      "model": "mistral-small-latest",
+      "free": true,
+      "context_window": 32000,
+      "limits": { "rpm": 60, "tpm": 500000 },
+      "source": "https://docs.mistral.ai/deployment/ai-studio/tier",
+      "last_verified": "2026-10-12"
+    }
+  ],
+  "aliases": {
+    "fast": [
+      "groq/llama-3.1-8b-instant",
+      "cerebras/llama-3.3-70b",
+      "gemini/gemini-2.5-flash-lite",
+      "mistral/mistral-small-latest"
+    ],
+    "smart": [
+      "groq/llama-3.3-70b-versatile",
+      "gemini/gemini-2.5-flash",
+      "cerebras/llama-3.3-70b",
+      "openrouter/llama-3.3-70b:free"
+    ],
+    "long-context": [
+      "gemini/gemini-2.5-flash",
+      "gemini/gemini-2.5-flash-lite",
+      "groq/llama-3.3-70b-versatile"
+    ]
+  }
+}

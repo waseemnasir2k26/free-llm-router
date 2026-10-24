@@ -1,0 +1,39 @@
+{
+  "name": "free-llm-router",
+  "version": "1.0.0",
+  "description": "Zero-dependency OpenAI-compatible proxy that chains free-tier LLM APIs (Groq, Gemini, OpenRouter, Cerebras, Mistral) with quota tracking and 429 failover.",
+  "main": "src/server.js",
+  "bin": {
+    "free-llm-router": "src/server.js"
+  },
+  "scripts": {
+    "start": "node src/server.js --port 8787 --config router.config.json",
+    "test": "node --test",
+    "demo": "node examples/demo-mock.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "llm",
+    "openai-compatible",
+    "llm-proxy",
+    "llm-router",
+    "free-llm",
+    "groq",
+    "gemini",
+    "openrouter",
+    "cerebras",
+    "mistral",
+    "n8n",
+    "failover",
+    "rate-limiting"
+  ],
+  "author": "Waseem Nasir <info@skynetjoe.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waseemnasir2k26/free-llm-router.git"
+  },
+  "homepage": "https://github.com/waseemnasir2k26/free-llm-router#readme"
+}

@@ -1,0 +1,18 @@
+{
+  "state_file": "router.state.json",
+  "default_alias": "fast",
+  "providers": { "groq": { "api_key_env": "GROQ_API_KEY" } },
+  "models": [
+    {
+      "id": "groq/llama-3.1-8b-instant",
+      "provider": "groq",
+      "model": "llama-3.1-8b-instant",
+      "free": true,
+      "context_window": 131072,
+      "limits": { "rpm": 30, "rpd": 14400, "tpm": 6000 },
+      "source": "https://console.groq.com/docs/rate-limits",
+      "last_verified": "2026-10-12"
+    }
+  ],
+  "aliases": { "fast": ["groq/llama-3.1-8b-instant"] }
+}
