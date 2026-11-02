@@ -93,7 +93,7 @@ Defaults shipped in [`router.config.example.json`](router.config.example.json). 
 | Gemini     | gemini-2.5-flash-lite (fast, long-context) | 15  | 1,000  | 250,000 | 1,048,576 | [docs](https://ai.google.dev/gemini-api/docs/rate-limits)      | 2026-10-12    |
 | OpenRouter | llama-3.3-70b-instruct:free (smart)        | 20  | 50     | n/a     | 65,536    | [docs](https://openrouter.ai/docs/api-reference/limits)        | 2026-10-12    |
 | Cerebras   | llama-3.3-70b (fast, smart)                | 30  | 14,400 | 60,000  | 65,536    | [docs](https://inference-docs.cerebras.ai/support/rate-limits) | 2026-10-12    |
-| Mistral    | mistral-small-latest (fast)                | 60  | n/a    | 500,000 | 32,000    | [docs](https://docs.mistral.ai/deployment/ai-studio/tier)      | 2026-10-12    |
+| Mistral    | mistral-small-latest (fast)                | 60  | n/a    | 500,000 | 32,000    | [docs](https://docs.mistral.ai/)      | 2026-10-12    |
 
 **Honest disclaimer: free tiers change, often without notice.** These numbers are conservative starting points written from the providers' public documentation as the author understood it on the date shown. They were **not** re-checked against live dashboards when this was released, and your account, region or tier may differ. Free models also get renamed and retired (the router handles that by marking them `removed`, but you still need to update the config). Check each source link and edit `router.config.json` before relying on a number. Some providers also limit by account rather than by key, which a per-process counter cannot see.
 
@@ -158,7 +158,7 @@ Built by [Waseem Nasir](https://www.skynetjoe.com/?utm_source=github&utm_medium=
 
 - Hire on Fiverr: https://www.fiverr.com/agencies/skynetjoellc
 - Hire on Upwork: https://www.upwork.com/freelancers/muhammadwaseemnasir
-- Book a free call: https://calendly.com/skynetlabs/schedule-a-free-consultation
+- Book a free call: https://wa.me/6281316077185
 
 ## License
 
